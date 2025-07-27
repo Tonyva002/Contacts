@@ -29,15 +29,16 @@ Install Android Studio.
 
 ## Imagenes
 
-1) ![image](<img width="375" height="836" alt="image" src="https://github.com/user-attachments/assets/0f6cc840-b10c-4ab8-90a9-6476e822449e" />)
+1) <img width="377" height="835" alt="image" src="https://github.com/user-attachments/assets/61391770-6f80-48b3-b52e-d12c36fa998d" />
+
    
-2) ![image](<img width="377" height="832" alt="image" src="https://github.com/user-attachments/assets/ee562e3b-62d7-46b8-8a6e-7e640cc5068f" />)
+3) <img width="377" height="832" alt="image" src="https://github.com/user-attachments/assets/ee562e3b-62d7-46b8-8a6e-7e640cc5068f" />
    
-3) ![image](<img width="367" height="832" alt="image" src="https://github.com/user-attachments/assets/b17edddd-50e6-4f68-802d-19e913974087" />)
+4) <img width="367" height="832" alt="image" src="https://github.com/user-attachments/assets/b17edddd-50e6-4f68-802d-19e913974087" />
   
-4) ![image](<img width="378" height="835" alt="image" src="https://github.com/user-attachments/assets/f1857154-8f9d-4ce3-acd2-0896e5e80b59" />)
+5) <img width="378" height="835" alt="image" src="https://github.com/user-attachments/assets/f1857154-8f9d-4ce3-acd2-0896e5e80b59" />
   
-5) ![image](<img width="377" height="835" alt="image" src="https://github.com/user-attachments/assets/cc3212cb-78e6-4e41-b30c-b88792d1a5d5" />)
+6) <img width="377" height="835" alt="image" src="https://github.com/user-attachments/assets/cc3212cb-78e6-4e41-b30c-b88792d1a5d5" />
 
 
 
