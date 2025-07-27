@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Contacts</string>
+    <string name="user_image">User image</string>
+    <string name="contact">Contact</string>
+    <string name="search">Search</string>
+    <string name="change_view">Change view</string>
+    <string name="company">Company</string>
+    <string name="name">Name</string>
+    <string name="age">Age</string>
+    <string name="weight">Weight</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="address">Address</string>
+    <string name="last_name">Last name</string>
+    <string name="new_contact">New Contact</string>
+    <string name="delete_contact">Delete contact</string>
+    <string name="edit_contact">Edit contact</string>
+</resources>

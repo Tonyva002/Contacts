@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context=".activities.NewContactActivity">
+
+    <!-- Toolbar -->
+    <include
+        android:id="@+id/i_toolbar"
+        layout="@layout/toolbar" />
+
+    <!-- ScrollView debajo de la Toolbar -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+
+    <!-- Contenido del formulario -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/common_size_default">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:contentDescription="@string/user_image"
+                android:scaleType="fitXY"
+                android:src="@drawable/foto_01"
+                app:shapeAppearanceOverlay="@style/RoundedImage" />
+
+            <EditText
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:hint="@string/name"
+                android:layout_marginTop="@dimen/common_size_default"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/tvLastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:hint="@string/last_name"
+                android:layout_marginTop="@dimen/common_size_default"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/tvCompany"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:hint="@string/company"
+                android:layout_marginTop="@dimen/common_size_default"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/tvAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:hint="@string/age"
+                android:layout_marginTop="@dimen/common_size_default"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/tvWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:hint="@string/weight"
+                android:layout_marginTop="@dimen/common_size_default"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/tvEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:hint="@string/email"
+                android:layout_marginTop="@dimen/common_size_default"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/tvPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:hint="@string/phone"
+                android:layout_marginTop="@dimen/common_size_default"
+                android:inputType="phone" />
+
+            <EditText
+                android:id="@+id/tvAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:hint="@string/address"
+                android:layout_marginTop="@dimen/common_size_default"
+                android:inputType="text" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
