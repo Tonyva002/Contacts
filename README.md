@@ -31,7 +31,7 @@ Install Android Studio.
 ## Capturas de Pantalla
 
 ### 1)
-![Pantalla 1](img width="376" height="837" alt="image" src="https://github.com/user-attachments/assets/d68412ef-3f65-4eb4-9bb0-a213793d4c0b")
+![Pantalla 1](https://github.com/user-attachments/assets/d68412ef-3f65-4eb4-9bb0-a213793d4c0b)
 
 ### 2)
 ![Pantalla 3](https://github.com/user-attachments/assets/ee562e3b-62d7-46b8-8a6e-7e640cc5068f)
