@@ -101,7 +101,7 @@ class CustomAdapter(var context: Context, items: ArrayList<Contact>):BaseAdapter
 
     }
 
-    private class ViewHolder(view: View) {
+   inner class ViewHolder(view: View) {
         val name: TextView = view.findViewById(R.id.tvName)
         val photo: ImageView = view.findViewById(R.id.imgPhoto)
         val company: TextView = view.findViewById(R.id.tvCompany)
