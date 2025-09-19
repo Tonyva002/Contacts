@@ -19,16 +19,40 @@ import com.pangea.contacts.models.Contact
 class NewContactActivity : AppCompatActivity() {
 
     //Propiedades
-    var indexPhoto: Int = 0
-    val photos = arrayOf(R.drawable.foto_01, R.drawable.foto_02, R.drawable.foto_03, R.drawable.foto_04, R.drawable.foto_05, R.drawable.foto_06)
-    var photo: ImageView? = null
-    var index: Int = -1
+    private var indexPhoto: Int = 0
+    private val photos = arrayOf(
+        R.drawable.foto_01,
+        R.drawable.foto_02,
+        R.drawable.foto_03,
+        R.drawable.foto_04,
+        R.drawable.foto_05,
+        R.drawable.foto_06
+    )
+    private var photo: ImageView? = null
+    private var index: Int = -1
+    private var mIsEditMode: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_new_contact)
 
+        //Referenciar y seleccionar fotos
+        photo = findViewById<ImageView>(R.id.imgPhoto)
+        photo?.setOnClickListener {
+            selectPhoto()
+        }
+        //Reconocer nuevo vs editar
+        if (intent.hasExtra("ID")) {
+            index = intent.getStringExtra("ID")?.toInt() ?: 0
+            mIsEditMode = true
+            fillInData(index)
+        }
+
+        setupActionBar()
+    }
+
+    private fun setupActionBar(){
         //Referenciar y inflar la toolbar
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -36,18 +60,8 @@ class NewContactActivity : AppCompatActivity() {
         //Navegar hacia atras en la toolbar
         var actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
-
-        //Referenciar y seleccionar fotos
-         photo = findViewById<ImageView>(R.id.imgPhoto)
-         photo?.setOnClickListener {
-            selectPhoto()
-        }
-        //Reconocer nuevo vs editar
-        if (intent.hasExtra("ID")){
-            index = intent.getStringExtra("ID")?.toInt() ?: 0
-            fillInData(index)
-
-        }
+        actionBar?.title = if (mIsEditMode) getString(R.string.update_contact)
+        else getString(R.string.add_contact)
     }
 
     //Metodo para inflar el menu de la toolbar (items)
@@ -59,7 +73,7 @@ class NewContactActivity : AppCompatActivity() {
 
     //Metodo para agregarle funcionalidad a los items de la toolbar
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
+        when (item.itemId) {
 
             android.R.id.home -> {
                 finish()
@@ -81,37 +95,46 @@ class NewContactActivity : AppCompatActivity() {
                 val weightValue = weight.text.toString().toDoubleOrNull()
 
                 if (name.text.isNullOrBlank() || lastname.text.isNullOrBlank() || email.text.isNullOrBlank()
-                    || ageValue == null || weightValue == null) {
-                    Toast.makeText(this, "Completa correctamente todos los campos obligatorios", Toast.LENGTH_SHORT).show()
+                    || ageValue == null || weightValue == null
+                ) {
+                    Toast.makeText(
+                        this,
+                        "Completa correctamente todos los campos obligatorios",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     return true
                 }
 
-                if (index > -1){
+                if (index > -1) {
                     //Llamada a metodo para actualizar nuevo contacto
-                    ContactsActivity.updateContact(index, Contact(
-                        name.text.toString(),
-                        lastname.text.toString(),
-                        company.text.toString(),
-                        ageValue,
-                        email.text.toString(),
-                        phone.text.toString(),
-                        weightValue,
-                        address.text.toString(),
-                        getPhoto(indexPhoto)
-                    ))
-                }else{
+                    ContactsActivity.updateContact(
+                        index, Contact(
+                            name.text.toString(),
+                            lastname.text.toString(),
+                            company.text.toString(),
+                            ageValue,
+                            email.text.toString(),
+                            phone.text.toString(),
+                            weightValue,
+                            address.text.toString(),
+                            getPhoto(indexPhoto)
+                        )
+                    )
+                } else {
                     //Llamada a metodo para agregar nuevo contacto
-                    ContactsActivity.addContact(Contact(
-                        name.text.toString(),
-                        lastname.text.toString(),
-                        company.text.toString(),
-                        ageValue,
-                        email.text.toString(),
-                        phone.text.toString(),
-                        weightValue,
-                        address.text.toString(),
-                        getPhoto(indexPhoto)
-                    ))
+                    ContactsActivity.addContact(
+                        Contact(
+                            name.text.toString(),
+                            lastname.text.toString(),
+                            company.text.toString(),
+                            ageValue,
+                            email.text.toString(),
+                            phone.text.toString(),
+                            weightValue,
+                            address.text.toString(),
+                            getPhoto(indexPhoto)
+                        )
+                    )
 
                 }
 
@@ -119,13 +142,14 @@ class NewContactActivity : AppCompatActivity() {
                 Log.d("NUMERO DE ELEMENTOS", ContactsActivity.contacts?.count().toString())
                 return true
             }
+
             else -> return super.onOptionsItemSelected(item)
         }
     }
 
 
     //Metodo para seleccionar photo
-    fun selectPhoto(){
+    fun selectPhoto() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Seleciona imagen de perfil")
 
@@ -137,26 +161,24 @@ class NewContactActivity : AppCompatActivity() {
         adapterDialog.add("Photo 05")
         adapterDialog.add("Photo 06")
 
-        builder.setAdapter(adapterDialog){
-            dialog, which ->
+        builder.setAdapter(adapterDialog) { dialog, which ->
             indexPhoto = which
             photo?.setImageResource(getPhoto(indexPhoto))
 
         }
 
-        builder.setNegativeButton("Cancelar"){
-            dialog, which ->
+        builder.setNegativeButton("Cancelar") { dialog, which ->
             dialog.dismiss()
         }
         builder.show()
     }
 
-    fun getPhoto(index: Int): Int{
+    fun getPhoto(index: Int): Int {
         return photos.get(index)
 
     }
 
-    fun fillInData(index: Int){
+    fun fillInData(index: Int) {
         val contact = ContactsActivity.getContact(index)
 
         //Referenciar a las vistas
@@ -172,18 +194,18 @@ class NewContactActivity : AppCompatActivity() {
 
         //Asignarle valor a las vistas
         image.setImageResource(contact.photo)
-        name.setText(contact.name,TextView.BufferType.EDITABLE)
-        lastname.setText(contact.lastname,TextView.BufferType.EDITABLE)
+        name.setText(contact.name, TextView.BufferType.EDITABLE)
+        lastname.setText(contact.lastname, TextView.BufferType.EDITABLE)
         company.setText(contact.company, TextView.BufferType.EDITABLE)
         age.setText(contact.age.toString(), TextView.BufferType.EDITABLE)
         weight.setText(contact.weight.toString(), TextView.BufferType.EDITABLE)
         email.setText(contact.email, TextView.BufferType.EDITABLE)
         phone.setText(contact.phone, TextView.BufferType.EDITABLE)
-        address.setText(contact.address, TextView.BufferType.EDITABLE )
+        address.setText(contact.address, TextView.BufferType.EDITABLE)
 
         var position = 0
-        for(photo in photos){
-            if(contact.photo == photo){
+        for (photo in photos) {
+            if (contact.photo == photo) {
                 indexPhoto = position
             }
             position++

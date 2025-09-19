@@ -33,6 +33,7 @@ class DetailsActivity : AppCompatActivity() {
         //Agregar la navegacion hacia atras en la toolbar
         var actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
+        actionBar?.title = getString(R.string.contact_details)
 
         //Obtener el index enviado desde la pantalla anterior (ContactActivity)
          index = intent.getStringExtra("ID")?.toInt()?: 0
