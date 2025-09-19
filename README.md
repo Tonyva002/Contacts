@@ -34,16 +34,16 @@ Install Android Studio.
 ![Pantalla 1](https://github.com/user-attachments/assets/d68412ef-3f65-4eb4-9bb0-a213793d4c0b)
 
 ### 2)
-![Pantalla 3](https://github.com/user-attachments/assets/ee562e3b-62d7-46b8-8a6e-7e640cc5068f)
+![Pantalla 2](https://github.com/user-attachments/assets/ee562e3b-62d7-46b8-8a6e-7e640cc5068f)
 
 ### 3)
-![Pantalla 4](https://github.com/user-attachments/assets/b17edddd-50e6-4f68-802d-19e913974087)
+![Pantalla 3](https://github.com/user-attachments/assets/7b4bea01-b899-48ad-9a59-5d69c7240d74)
 
 ### 4)
-![Pantalla 5](https://github.com/user-attachments/assets/f1857154-8f9d-4ce3-acd2-0896e5e80b59)
+![Pantalla 4](https://github.com/user-attachments/assets/354b3adc-d641-4aed-b5bd-73b46fd40a42)
 
 ### 5)
-![Pantalla 6](https://github.com/user-attachments/assets/cc3212cb-78e6-4e41-b30c-b88792d1a5d5)
+![Pantalla 5](https://github.com/user-attachments/assets/97e34baf-7293-4b66-8e0b-0f83e6bf90b1)
 
 
 
